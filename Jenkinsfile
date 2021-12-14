@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    environment {
+      PATH = "/bin/zsh:$PATH"
+    }
 
     stages {
         stage ('Clean') {
