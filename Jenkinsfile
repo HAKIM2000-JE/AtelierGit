@@ -4,19 +4,19 @@ pipeline {
     stages {
         stage ('Clean') {
             steps {
-                zsh ' mvn clean'
+                sh ' mvn clean'
             }
         }
 
         stage ('Test') {
             steps {
-                zsh 'mvn test'
+                sh 'mvn test'
             }
         }
 
          stage ('Package') {
                     steps {
-                        zsh 'mvn package'
+                        sh 'mvn package'
                     }
               }
     }
