@@ -1,26 +1,21 @@
 pipeline {
     agent any
-    environment {
-      PATH = "/bin/zsh:$PATH"
-    }
-
     stages {
-        stage ('Clean') {
+        stage('Build') {
             steps {
                 sh 'mvn clean'
             }
         }
-
-        stage ('Test') {
+        stage('Test') {
             steps {
                 sh 'mvn test'
             }
-        }
 
-         stage ('Package') {
-                    steps {
-                        sh 'mvn package'
-                    }
-              }
+        }
+        stage('Package') {
+            steps {
+                sh 'mvn package'
+            }
+        }
     }
 }
